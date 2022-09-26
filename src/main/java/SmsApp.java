@@ -10,7 +10,7 @@ import com.twilio.twiml.messaging.Message;
 public class SmsApp {
 	public static void main(String[] args) {
 		//get("/", (req, res) -> "Hello Web");
-
+		System.out.println(" application started : ");
 		post("/sms", (req, res) -> {
 			int fromIndex = req.body().lastIndexOf("WaId=");
 			int toIndex = req.body().indexOf("&", req.body().lastIndexOf("WaId="));
@@ -62,7 +62,7 @@ public class SmsApp {
 	
 	private static String findTrackingId(String whtsAppNo)
 	{
-		Twilio.init("ACf52f89bcc2450064e9d273bb046b0c55", "fd2d4b5beeb35366c76f635df246ab64");
+		Twilio.init("ACf52f89bcc2450064e9d273bb046b0c55", "610a6af5b1ae7161ef6c76efe4cb99f8");
 		System.out.println("Checking History of conversation");
 		ResourceSet<com.twilio.rest.api.v2010.account.Message> messages = com.twilio.rest.api.v2010.account.Message
 				.reader()
